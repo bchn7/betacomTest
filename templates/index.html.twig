@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="indexBody">
+        <div class="params">
+        <h2>Parametrs</h2>
+        <button>
+        <a href="{{ path('param') }}">Add param</a>
+        </button>
+        <table>
+        <tr>
+                <td>Id</td>
+                <td>Exam id</td>
+                <td>Name</td>
+                <td>Value</td>
+        </tr>
+        {% for item in param %}
+                <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.exam_id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.value }}</td>
+                </tr>
+        {% endfor %}
+        </table>
+        </div>
+        <div class="exams">
+        <h2>Exams</h2>
+        <button>
+        <a href="{{ path('exam') }}">Add Exam</a>
+        </button>
+        <table>
+        <tr>
+                <td>Id</td>
+                <td>name</td>
+                <td>Create Date</td>
+                <td>Description</td>
+        </tr>
+        {% for item in exam %}
+                <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.createDt|date("Y-m-d h:i:s") }}</td>
+                <td>{{ item.description }}</td>
+                </tr>
+        {% endfor %}
+        </table>
+        </div>
+</div>
+{% endblock %}

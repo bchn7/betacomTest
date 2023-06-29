@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+        
+        <h2>Parametrs for exam {{id}}</h2>
+
+        <table>
+        <tr>
+                <td>Id</td>
+                <td>Exam id</td>
+                <td>Name</td>
+                <td>Value</td>
+        </tr>
+        {% for item in param %}
+                <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.exam_id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.value }}</td>
+                </tr>
+        {% endfor %}
+        </table>
+
+
+{% endblock %}
